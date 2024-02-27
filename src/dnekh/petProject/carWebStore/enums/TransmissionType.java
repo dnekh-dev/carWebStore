@@ -1,6 +1,6 @@
 package dnekh.petProject.carWebStore.enums;
 
-public enum Transmission {
+public enum TransmissionType {
     MANUAL("механический"), //manual transmission
     AUTOMATIC("автоматический"), //automatic transmission
     AMT("роботизированный"), //automated manual transmission (AMT) | dual-clutch transmission (DCT)
@@ -8,7 +8,7 @@ public enum Transmission {
 
     private final String description;
 
-    Transmission(String description) {
+    TransmissionType(String description) {
         this.description = description;
     }
 
