@@ -8,21 +8,21 @@ import dnekh.petProject.carWebStore.enums.TransmissionType;
 public abstract class Car {
     private static int nextId = 1;
     private int id;
-    private String brand;
-    private String model;
+    private final String brand;
+    private final String model;
     private String color;
-    private int yearOfManufacture; //год выпуска
+    private final int yearOfManufacture; //год выпуска
     private int mileage; //пробег в км
     private EngineType engineType; //тип двигателя
     private TransmissionType transmissionType; //тип трансмиссии
     private DriverType driverType; //тип привода
-    private String VIN; //vehicle identification number (VIN) - это уникальный идентификационный номер автомобиля, который состоит из 17 символов, включающих в себя цифры и буквы (за исключением букв I, O, Q, чтобы избежать путаницы с цифрами 1 и 0). Этот номер служит своеобразным "отпечатком пальца" для каждого транспортного средства, позволяя идентифицировать конкретные характеристики автомобиля, такие как страна производитель, производитель, тип транспортного средства, год выпуска и завод-изготовитель.
+    private final String VIN; //vehicle identification number (VIN)
     private Condition condition; //состояние: new or used
     private String features; //список опций
     private String descriptions; //краткое описание
     private String availability; //доступность в данный момент
 
-    public Car(int id, String brand, String model, String color, int yearOfManufacture, int mileage, EngineType engineType, TransmissionType transmissionType, DriverType driverType, String VIN, Condition condition, String features, String descriptions, String availability) {
+    public Car(String brand, String model, String color, int yearOfManufacture, int mileage, EngineType engineType, TransmissionType transmissionType, DriverType driverType, String VIN, Condition condition, String features, String descriptions, String availability) {
         this.id = nextId++;
         this.brand = brand;
         this.model = model;
@@ -54,16 +54,8 @@ public abstract class Car {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
     public String getModel() {
         return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public String getColor() {
@@ -76,10 +68,6 @@ public abstract class Car {
 
     public int getYearOfManufacture() {
         return yearOfManufacture;
-    }
-
-    public void setYearOfManufacture(int yearOfManufacture) {
-        this.yearOfManufacture = yearOfManufacture;
     }
 
     public int getMileage() {
@@ -116,10 +104,6 @@ public abstract class Car {
 
     public String getVIN() {
         return VIN;
-    }
-
-    public void setVIN(String VIN) {
-        this.VIN = VIN;
     }
 
     public Condition getCondition() {
